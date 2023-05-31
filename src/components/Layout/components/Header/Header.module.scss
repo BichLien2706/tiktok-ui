@@ -16,13 +16,11 @@
     align-items: center;
     justify-content: space-between;
 }
-.logo{
-    
+.search, .search-result{
+    width: 361px;
 }
-
 .search{
     position: relative;
-    width: 361px;
     height: var(--search-height);
     padding-left: 16px;
     display: flex;
@@ -53,7 +51,12 @@
         border: 1.5px solid rgba(22,24,35,0.2);
     }
 }
-
+.search-title{
+    padding: 5px 12px;
+    color: rgba(22,24,35,0.5);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
 .clear,
 .loading{
     position: absolute;
