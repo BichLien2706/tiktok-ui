@@ -2,9 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,700;1,200;1,300&display=swap');
 :root{
     --primary: #fe2c55;
+    --black: #000;
+    --text-color: #333;
     //default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+
 }
 *{
     box-sizing: border-box; //đỡ phải tính toán width height
@@ -19,4 +22,11 @@ body{
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizespeed; //đọc thêm trên mạng thuộc tính
+}
+button, input,[tabindex]{
+    outline: none;
+    border: none;
+}
+a[href]{
+    color: var(--text-color);
 }
