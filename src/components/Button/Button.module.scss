@@ -57,6 +57,11 @@
 .title + .icon {
     margin-left: 8px;
 }
+.icon {
+    display: inline-block;
+    text-align: center;
+    width: 24px;
+}
 //Button sizes
 .small {
     min-width: 88px;
@@ -65,7 +70,4 @@
 .large {
     min-width: 140px;
     padding: 14px 16px;
-}
-.custom-login {
-    color: var(--primary);
 }

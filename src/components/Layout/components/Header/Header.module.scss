@@ -1,33 +1,35 @@
-.wrapper{
+.wrapper {
     --search-border-radius: 92px;
     --search-height: 46px;
     --search-top-spacer: 9px;
     --search-button-width: 52px;
     height: var(--default-layout-header-height);
-    box-shadow: 0px 1px 1px rgb(0, 0, 0 , 12%);
+    box-shadow: 0px 1px 1px rgb(0, 0, 0, 12%);
     display: flex;
     justify-content: center;
     width: 100%;
 }
-.inner{
+.inner {
     height: 100%;
     width: var(--default-layout-width);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 var(--default-layout-horizontal-spacer);
 }
-.search, .search-result{
+.search,
+.search-result {
     width: 361px;
 }
-.search{
+.search {
     position: relative;
     height: var(--search-height);
     padding-left: 16px;
     display: flex;
     background-color: #f1f1f2;
-    border: 1.5px solid rgba(0,0,0,0); //or có thể đổi thành transperent là màu trong suốt
+    border: 1.5px solid rgba(0, 0, 0, 0); //or có thể đổi thành transperent là màu trong suốt
     border-radius: var(--search-border-radius);
-    input{
+    input {
         flex: 1;
         color: var(--black);
         height: 100%;
@@ -35,30 +37,31 @@
         background-color: transparent;
         caret-color: var(--primary); //khi có dấu nháy chuột thì sẽ chuyển đỏ
     }
-    input:not(:placeholder-shown) ~ .search-btn{ //khi input nhập chữ vào
+    input:not(:placeholder-shown) ~ .search-btn {
+        //khi input nhập chữ vào
         color: var(--black);
     }
-    &::after{
+    &::after {
         position: absolute;
         content: '';
-        height: calc(var(--search-height) - var(--search-top-spacer)*2);
+        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
         width: 1px;
         top: var(--search-top-spacer);
         right: var(--search-button-width);
-        background-color: rgba(22,24,35,0.12);
+        background-color: rgba(22, 24, 35, 0.12);
     }
-    &:focus-within{
-        border: 1.5px solid rgba(22,24,35,0.2);
+    &:focus-within {
+        border: 1.5px solid rgba(22, 24, 35, 0.2);
     }
 }
-.search-title{
+.search-title {
     padding: 5px 12px;
-    color: rgba(22,24,35,0.5);
+    color: rgba(22, 24, 35, 0.5);
     font-weight: 600;
     font-size: 1.4rem;
 }
 .clear,
-.loading{
+.loading {
     position: absolute;
     right: calc(var(--search-button-width) + 16px);
     top: 50%;
@@ -66,20 +69,47 @@
     color: rgba(22, 24, 35, 0.34);
 }
 
-.search-btn{
+.search-btn {
     width: 52px;
     height: 100%;
     font-size: 1.8rem;
     color: gray;
     border-top-right-radius: var(--search-border-radius);
     border-bottom-right-radius: var(--search-border-radius);
-    &:hover{ //hover cho chính thằng bên trên
-        background-color: rgba(22,24,35,0.03);
+    &:hover {
+        //hover cho chính thằng bên trên
+        background-color: rgba(22, 24, 35, 0.03);
         cursor: pointer;
         color: var(--black);
     }
-    &:active{
-        background-color: rgba(22,24,35,0.06);
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
     }
 }
-
+//Actions
+.actions{
+    display: flex;
+    align-items: center;
+}
+.more-btn {
+    font-size: 2rem;
+    padding: 4px 8px;
+    margin-left: 28px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.action-btn{
+    background-color: transparent;
+    font-size: 2.4rem;
+    color: black;
+    padding: 4px 12px;
+    cursor: pointer;
+}
+.user-avatar{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 22px;
+    cursor: pointer;
+}
