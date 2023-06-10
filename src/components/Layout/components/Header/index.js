@@ -26,6 +26,8 @@ import { Wrapper as PopperWrapper } from '~/components/Popper';
 import AccountItem from '../AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/icons';
+import Image from '~/components/image';
 // import { AccountItem } from '~/components/Layout/components/AccountItem'
 
 const cx = classNames.bind(styles);
@@ -132,9 +134,19 @@ function Header() {
                 <div className={cx('actions')}>
                 {currentUser ? (
                     <>
-                        <Tippy delay={[0, 200]} offset={[12, 8]} content='Upload video' placement='bottom-end'>
+                        <Tippy delay={[0, 50]} offset={[12, 8]} content='Upload video' placement='bottom-end'>
                             <button className={cx('action-btn')}>
-                                <FontAwesomeIcon icon={faCloudUpload}/>
+                                <UploadIcon/>
+                            </button>
+                        </Tippy>
+                        <Tippy delay={[0, 50]} offset={[12, 8]} content='Message' placement='bottom-end'>
+                            <button className={cx('action-btn')}>
+                                <MessageIcon/>
+                            </button>
+                        </Tippy>
+                        <Tippy delay={[0, 50]} offset={[12, 8]} content='Inbox' placement='bottom-end'>
+                        <button className={cx('action-btn')}>
+                                <InboxIcon/>
                             </button>
                         </Tippy>
                     </>
@@ -148,7 +160,12 @@ function Header() {
                 )}
                         <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                             {currentUser ? (
-                                <img src={'https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/351307858_1050541895930037_7383037931059785246_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=K4VkuOV6Wd8AX-bya6D&_nc_ht=scontent.fdad1-3.fna&oh=00_AfAmfxBd8rnVKiUWr2d8KsHfCqnXI72fE9JBqW86sNG7ag&oe=64888696'} alt='Nguyen Van A' className={cx('user-avatar')}/>
+                                <Image 
+                                    src={'https://scontent.fdad1-3.fna.fbcdn.net/v/t39.30808-6/351307858_1050541895930037_7383037931059785246_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=K4VkuOV6Wd8AX-bya6D&_nc_ht=scontent.fdad1-3.fna&oh=00_AfAmfxBd8rnVKiUWr2d8KsHfCqnXI72fE9JBqW86sNG7ag&oe=64888696'} 
+                                    alt='Nguyen Van A' 
+                                    className={cx('user-avatar')}
+                                    fallback = ''
+                                />
                             ):(
                                 <button className={cx('more-btn')}>
                                     <FontAwesomeIcon icon={faEllipsisVertical} />
