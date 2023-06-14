@@ -1,0 +1,80 @@
+.search,
+.search-result {
+    width: 361px;
+}
+.search {
+    position: relative;
+    height: var(--search-height);
+    padding-left: 16px;
+    display: flex;
+    background-color: #f1f1f2;
+    border: 1.5px solid rgba(0, 0, 0, 0); //or có thể đổi thành transperent là màu trong suốt
+    border-radius: var(--search-border-radius);
+    input {
+        flex: 1;
+        color: var(--black);
+        height: 100%;
+        font-size: 1.6rem;
+        background-color: transparent;
+        caret-color: var(--primary); //khi có dấu nháy chuột thì sẽ chuyển đỏ
+    }
+    input:not(:placeholder-shown) ~ .search-btn {
+        //khi input nhập chữ vào
+        color: var(--black);
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        height: calc(var(--search-height) - var(--search-top-spacer) * 2);
+        width: 1px;
+        top: var(--search-top-spacer);
+        right: var(--search-button-width);
+        background-color: rgba(22, 24, 35, 0.12);
+    }
+    &:focus-within {
+        border: 1.5px solid rgba(22, 24, 35, 0.2);
+    }
+}
+.search-title {
+    padding: 5px 12px;
+    color: rgba(22, 24, 35, 0.5);
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.clear,
+.loading {
+    position: absolute;
+    right: calc(var(--search-button-width) + 16px);
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+}
+
+.loading {
+    animation: spinner 1s linear infinite; // quay trong vong 1s quay vo han
+}
+@keyframes spinner{
+    from{
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to{
+        transform:translateY(-50%) rotate(360deg);
+    }
+}
+.search-btn {
+    width: 52px;
+    height: 100%;
+    font-size: 1.8rem;
+    color: gray;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    &:hover {
+        //hover cho chính thằng bên trên
+        background-color: rgba(22, 24, 35, 0.03);
+        cursor: pointer;
+        color: var(--black);
+    }
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
